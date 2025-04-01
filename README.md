@@ -16,7 +16,9 @@
 
 ### 1.3. Install and Configure AWS CLI
 
+https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 
+![image](https://github.com/user-attachments/assets/21ca0743-27c0-4756-9021-3e7cc71f352f)
 
 
 
