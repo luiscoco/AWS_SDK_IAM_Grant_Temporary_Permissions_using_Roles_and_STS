@@ -5,11 +5,27 @@
 ### 1.1. Install .NET 10
 
 
+
+
+
 ### 1.2. Install Visual Studio 2022 v17.4(Preview)
 
 
 
+
+
+### 1.3. Install and Configure AWS CLI
+
+
+
+
+
 ## 2. Create a C# Console application
+
+
+
+
+
 
 
 
