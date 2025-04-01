@@ -31,7 +31,7 @@
 
 ## 3. Add Nuget Packages
 
-![image](https://github.com/user-attachments/assets/5f13f1e8-47d2-482c-8675-e43f8a1df792)
+![image](https://github.com/user-attachments/assets/bd116b2e-a14b-41cc-8652-c318a4b63169)
 
 ## 4. Create the solution files structure
 
