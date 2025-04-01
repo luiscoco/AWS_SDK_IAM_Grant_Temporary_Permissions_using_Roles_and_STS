@@ -15,11 +15,11 @@
 
 ## 3. Add Nuget Packages
 
-
+![image](https://github.com/user-attachments/assets/5f13f1e8-47d2-482c-8675-e43f8a1df792)
 
 ## 4. Create the solution files structure
 
-
+![image](https://github.com/user-attachments/assets/556b6758-6c50-4d44-af1a-c96f272d8194)
 
 ## 5. Adding the settings.json file
 
@@ -33,8 +33,6 @@
   "GroupName": "test-group"
 }
 ```
-
-
 
 ## 6. Input the IAMWrapper.cs code
 
