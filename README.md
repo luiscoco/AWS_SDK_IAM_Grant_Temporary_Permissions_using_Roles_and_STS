@@ -82,6 +82,60 @@ We select the project .NET 10 framework and we finally create the new solution
 
 ## 3. Add Nuget Packages
 
+These packages work together to create a modern .NET console app that:
+
+Uses AWS SDK v4 to manage IAM, S3, and STS services
+
+Leverages .NET Hosting, DI, and Configuration to follow clean architecture and scalable patterns
+
+**AWS Packages (AWSSDK 4.0.0-preview.11)**: These are part of the AWS SDK for .NET version 4 (preview)
+
+**AWSSDK.Extensions.NETCore.Setup**: Enables integration with .NET dependency injection (DI) and configuration
+
+Lets you register AWS services (e.g., S3, IAM) using services.AddAWSService<>()
+
+**AWSSDK.IdentityManagement**: AWS SDK for interacting with IAM (Identity and Access Management)
+
+Provides APIs to:
+
+a) Create/delete users, roles, and groups
+
+b) Attach policies
+
+c) Manage permissions
+
+**AWSSDK.S3**: AWS SDK for Amazon S3 (Simple Storage Service)
+
+Allows creating, listing, deleting buckets and objects
+
+**AWSSDK.SecurityToken**: AWS SDK for AWS STS (Security Token Service)
+
+Used for:
+
+a) Assuming roles
+
+b) Generating temporary credentials
+
+c) Secure cross-account access
+
+**Microsoft Extensions (10.0.0-preview.2)**: These are from the .NET 8/10 preview ecosystem and are part of the .NET Hosting & Configuration model
+
+**Microsoft.Extensions.Configuration**: Enables structured app configuration (e.g., appsettings.json, environment variables, etc.)
+
+Used to read configuration values like IAM user names, role names, etc
+
+**Microsoft.Extensions.Hosting**: Provides the generic host builder used in .NET Core apps
+
+Handles:
+
+a) App lifecycle
+
+b) Dependency injection
+
+c) Logging
+
+d) Background services
+
 ![image](https://github.com/user-attachments/assets/bd116b2e-a14b-41cc-8652-c318a4b63169)
 
 ## 4. Create the solution files structure
