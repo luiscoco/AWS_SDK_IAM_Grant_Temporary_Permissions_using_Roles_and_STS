@@ -4,19 +4,19 @@ In this hands-on guide, I walk through how to grant temporary permissions in AWS
 
 This example application does the following:
 
-a) Creates a user with no permissions
+a) **Creates a user** with no permissions
 
-b) Creates a role and policy that grant s3:ListAllMyBuckets permission
+b) **Creates a role and policy** that grant s3:ListAllMyBuckets permission
 
-c) Grants the user permission to assume the role
+c) Grants the **user** permission to **assume the role**
 
-d) Creates an S3 client object as the user and tries to list buckets (this will fail)
+d) **Creates an S3 client** object as the user and tries to **list buckets** (this **will FAIL!!!**)
 
-e) Gets temporary credentials by assuming the role
+e) **Gets temporary credentials** by assuming the role
 
-f) Creates a new S3 client object with the temporary credentials and lists the buckets (this will succeed)
+f) **Creates a new S3** client object **with the temporary credentials** and **lists the buckets** (this **will SUCCEED**)
 
-g) Deletes all the resources
+g) **Delete** all the **resources**
 
 For more detailed information about this post visit the official AWS SDK for .NET website:
 
