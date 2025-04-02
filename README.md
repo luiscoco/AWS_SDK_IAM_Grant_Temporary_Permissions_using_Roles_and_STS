@@ -1221,6 +1221,22 @@ Console.WriteLine("All done cleaning up our resources. Thank you for your patien
 
 ![image](https://github.com/user-attachments/assets/c92b8fa7-212c-429f-992e-5b2dc49b9565)
 
+### 10.1. We Create a new User
+
+![image](https://github.com/user-attachments/assets/f9122309-00bd-4a80-9b21-13e841e03ba2)
+
+We confirmed a **new User was Created** in AWS Console
+
+![image](https://github.com/user-attachments/assets/4805d49c-8679-41bb-89f4-761f886d2b8e)
+
+### 10.2. 
+
+
+
+### 10.3. 
+
+
+
 
 
 
