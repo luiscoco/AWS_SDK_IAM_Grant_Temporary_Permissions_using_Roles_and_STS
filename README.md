@@ -2,17 +2,13 @@
 
 ## 1. Prerrequisites
 
-### 1.1. Install .NET 10
+### 1.1. Download and Install .NET 10
 
+![image](https://github.com/user-attachments/assets/a2cf025f-ef65-43ec-97b1-ca834059f847)
 
+### 1.2. Install Visual Studio 2022 v17.4(Preview) Community Edition
 
-
-
-### 1.2. Install Visual Studio 2022 v17.4(Preview)
-
-
-
-
+![image](https://github.com/user-attachments/assets/e585e65e-af7a-4ecb-abd2-aa35aa533c32)
 
 ### 1.3. Install and Configure AWS CLI
 
@@ -39,6 +35,8 @@ We execute the following command to configure AWS CLI
 ```
 aws configure
 ```
+
+We input the **AWS Access Key ID** and **AWS Secret Access Key** already generated in the AWS Console
 
 ![image](https://github.com/user-attachments/assets/cd848db4-b61a-4449-844f-54e36bb7993a)
 
