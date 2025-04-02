@@ -1229,11 +1229,22 @@ We confirmed a **new User was Created** in AWS Console
 
 ![image](https://github.com/user-attachments/assets/4805d49c-8679-41bb-89f4-761f886d2b8e)
 
-### 10.2. 
+### 10.2. We create an Access Key
+
+![image](https://github.com/user-attachments/assets/1c74be72-ca2d-49cb-b9d8-a4a60fa6e45a)
+
+We also confirm in AWS Console for the new user the access key was created
+
+![image](https://github.com/user-attachments/assets/077704a8-4a19-43cc-b40f-de214071370b)
+
+![image](https://github.com/user-attachments/assets/0fffc728-e9e2-4b4a-b6fb-aae0795feca4)
+
+
+### 10.3. We create a new IAM Role
 
 
 
-### 10.3. 
+### 10.4. We create a new IAM Policy
 
 
 
