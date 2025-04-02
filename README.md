@@ -913,12 +913,6 @@ public async Task<User> CreateUserAsync(string userName)
 }
 ```
 
-**IAMWrapper.cs**
-
-```csharp
-
-```
-
 b) **Create an Access Key** for the new user
 
 **Program.cs**
@@ -943,11 +937,58 @@ public async Task<AccessKey> CreateAccessKeyAsync(string userName)
 
 c) **Creates a role and policy** that grant s3:ListAllMyBuckets permission
 
+**Define a role** policy document that allows the new user to assume the role.
+
 **Program.cs**
 
 ```csharp
-
+string assumeRolePolicyDocument = "{" +
+    "\"Version\": \"2012-10-17\"," +
+    "\"Statement\": [{" +
+        "\"Effect\": \"Allow\"," +
+        "\"Principal\": {" +
+        $"	\"AWS\": \"{userArn}\"" +
+        "}," +
+        "\"Action\": \"sts:AssumeRole\"" +
+    "}]" +
+"}";
 ```
+
+**Creating an IAM role** to allow listing the S3 buckets
+
+A role name is not case sensitive and must be unique to the account for which it is created
+
+**Program.cs**
+
+```csharp
+var roleArn = await iamWrapper.CreateRoleAsync(roleName, assumeRolePolicyDocument);
+```
+
+**Define the policy**. Permissions to list all buckets.
+
+**Program.cs**
+
+```csharp
+string policyDocument = "{" +
+    "\"Version\": \"2012-10-17\"," +
+    "	\"Statement\" : [{" +
+        "	\"Action\" : [\"s3:ListAllMyBuckets\"]," +
+        "	\"Effect\" : \"Allow\"," +
+        "	\"Resource\" : \"*\"" +
+    "}]" +
+"}";
+```
+
+**Create the Policy**
+
+**Program.cs**
+
+```csharp
+var policy = await iamWrapper.CreatePolicyAsync(s3PolicyName, policyDocument);
+```
+
+
+
 
 **IAMWrapper.cs**
 
