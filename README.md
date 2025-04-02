@@ -83,6 +83,26 @@ We select the project .NET 10 framework and we finally create the new solution
 
 ## 6. Input the IAMWrapper.cs code
 
+The IAMWrapper class is a C# wrapper around the AWS Identity and Access Management (IAM) service using the AWS SDK for .NET
+
+It provides convenient, high-level async methods for managing IAM resources like users, roles, policies, and access keys
+
+**Key Operations Implemented (Async Methods)**:
+
+a) **Create**: CreateUserAsync, CreateRoleAsync, CreatePolicyAsync, CreateAccessKeyAsync, CreateServiceLinkedRoleAsync
+
+b) **Get Info**: GetUserAsync, GetRoleAsync, GetPolicyAsync, GetAccountPasswordPolicyAsync
+
+c) **Attach/Detach Policies**: AttachRolePolicyAsync, DetachRolePolicyAsync
+
+d) **Put (Inline) Policies**: PutRolePolicyAsync, PutUserPolicyAsync
+
+e) **Delete Operations**: IAM users, roles, policies, access keys, inline policies.
+
+f) **List Operations (with pagination support)**: List of users, roles, policies, groups, SAML providers, etc.
+
+g) **WaitUntilAccessKeyIsReady**: Polls until a newly created access key is available for use.
+
 ```csharp
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: Apache-2.0
