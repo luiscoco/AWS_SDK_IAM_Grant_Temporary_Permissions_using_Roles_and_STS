@@ -725,6 +725,10 @@ public class S3Wrapper
 
 ## 8. Input the UIWrapper.cs code
 
+This class enhances the user experience in a console-based tutorial or learning app by clearly presenting steps, pausing for user interaction, and formatting output nicely
+
+It's **purely UI** logic—no AWS SDK calls or IAM logic here, just **support for the demo display**
+
 ```csharp
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: Apache-2.0
