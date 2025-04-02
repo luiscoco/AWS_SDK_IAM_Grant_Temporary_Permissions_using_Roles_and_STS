@@ -931,7 +931,7 @@ public async Task<AccessKey> CreateAccessKeyAsync(string userName)
 }
 ```
 
-### 9.3. Creates a Role 
+### 9.3. Creates an IAM Role 
 
 **Define a role** policy document that allows the new user to assume the role.
 
@@ -950,15 +950,15 @@ string assumeRolePolicyDocument = "{" +
 "}";
 ```
 
-### 9.4. Creating an IAM Policy to allow listing the S3 buckets
+```csharp
+var roleArn = await iamWrapper.CreateRoleAsync(roleName, assumeRolePolicyDocument);
+```
+
+### 9.4. Define a IAM Policy to allow listing the S3 buckets
 
 A role name is not case sensitive and must be unique to the account for which it is created
 
 **Program.cs**
-
-```csharp
-var roleArn = await iamWrapper.CreateRoleAsync(roleName, assumeRolePolicyDocument);
-```
 
 Define the policy, permission to list all buckets
 
@@ -973,7 +973,7 @@ string policyDocument = "{" +
 "}";
 ```
 
-### 9.5. Create the Policy 
+### 9.5. Create the IAM Policy 
 
 **Program.cs**
 
@@ -981,7 +981,7 @@ string policyDocument = "{" +
 var policy = await iamWrapper.CreatePolicyAsync(s3PolicyName, policyDocument);
 ```
 
-### 9.6. Attach the policy to the role**
+### 9.6. Attach the IAM Policy to the IAM Role
 
 **Program.cs**
 
@@ -989,7 +989,7 @@ var policy = await iamWrapper.CreatePolicyAsync(s3PolicyName, policyDocument);
 await iamWrapper.AttachRolePolicyAsync(policy.Arn, roleName);
 ```
 
-### 9.7. Grants the User permission to Assume the Role
+### 9.7. Grants the User permission to Assume the IAM Role
 
 Use the AWS Security Token Service (AWS **STS**) to have the **user assume the role** we created.
 
