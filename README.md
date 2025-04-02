@@ -42,8 +42,9 @@ We input the **AWS Access Key ID** and **AWS Secret Access Key** already generat
 
 ![image](https://github.com/user-attachments/assets/cd848db4-b61a-4449-844f-54e36bb7993a)
 
-## 2. Create a C# Console application
+## 2. Create a C# Console application with .NET 10 and Visual Studio v17.4 Community Edition
 
+![image](https://github.com/user-attachments/assets/326e2552-1024-4304-a181-2daf58882f1a)
 
 
 
