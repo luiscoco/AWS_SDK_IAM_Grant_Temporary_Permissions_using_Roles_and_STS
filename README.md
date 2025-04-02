@@ -722,7 +722,6 @@ public class S3Wrapper
 }
 ```
 
-
 ## 8. Input the UIWrapper.cs code
 
 This class enhances the user experience in a console-based tutorial or learning app by clearly presenting steps, pausing for user interaction, and formatting output nicely
@@ -830,9 +829,25 @@ public class UIWrapper
 }
 ```
 
+## 9. Input the Program.cs (middleware) code
 
+This code is a C# console application that demonstrates how to use the AWS Identity and Access Management (IAM) and Amazon S3 services programmatically using the AWS SDK for .NET
 
-## 9. Input the Program.cs(middleware) code
+It simulates a scenario where an **IAM user is created** and gradually **granted permissions using IAM roles and policies**.
+
+**Purpose**:
+
+The goal is to demonstrate IAM basics, including:
+
+a) **Creating a user** with no permissions.
+
+b) **Creating a role and a policy** to allow S3 access.
+
+c) **Assuming the role** using STS (Security Token Service).
+
+d) **Using temporary credentials** to access S3.
+
+e) **Cleaning up** the created AWS **resources**.
 
 ```csharp
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
