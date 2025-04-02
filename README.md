@@ -2,6 +2,22 @@
 
 In this hands-on guide, I walk through how to grant temporary permissions in AWS using IAM Roles and Security Token Service (STS)—all implemented in a .NET 10 console application with AWS SDK for .NET version 4.
 
+This example application does the following:
+
+a) Creates a user with no permissions
+
+b) Creates a role and policy that grant s3:ListAllMyBuckets permission
+
+c) Grants the user permission to assume the role
+
+d) Creates an S3 client object as the user and tries to list buckets (this will fail)
+
+e) Gets temporary credentials by assuming the role
+
+f) Creates a new S3 client object with the temporary credentials and lists the buckets (this will succeed)
+
+g) Deletes all the resources
+
 ## 1. Prerrequisites
 
 ### 1.1. Download and Install .NET 10
