@@ -1,4 +1,4 @@
-# AWS_IAM_Grant_Temporary_Permissions_using_Roles_and_STS
+# AWS SDK for .NET version 4 with .NET 10: Granting Temporary AWS Permissions with IAM Roles and STS
 
 ## 1. Prerrequisites
 
