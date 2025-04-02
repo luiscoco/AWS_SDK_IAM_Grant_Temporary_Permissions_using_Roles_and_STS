@@ -1257,6 +1257,14 @@ We confirm the new IAM Policy was created in AWS Console
 
 ### 10.5. We Attach the Policy to the Role
 
+![image](https://github.com/user-attachments/assets/f00cb6d2-1840-4619-b04b-86475fb3cbc0)
+
+We confirm in AWS Console the new IAM Policy was attached to the Role
+
+![image](https://github.com/user-attachments/assets/271901c5-82b4-4c10-8938-69e02244f9d3)
+
+### 10.6. 
+
 
 
 
