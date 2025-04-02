@@ -6,64 +6,9 @@ This example application does the following:
 
 a) **Creates a user** with no permissions
 
-**Program.cs**
-
-```csharp
-var user = await iamWrapper.CreateUserAsync(userName);
-```
-
-**IAMWrapper.cs**
-
-```csharp
-public async Task<User> CreateUserAsync(string userName)
-{
-    var response = await _IAMService.CreateUserAsync(new CreateUserRequest { UserName = userName });
-    return response.User;
-}
-```
-
-**IAMWrapper.cs**
-
-```csharp
-
-```
-
 b) **Create an Access Key** for the new user
 
-**Program.cs**
-
-```csharp
-var accessKey = await iamWrapper.CreateAccessKeyAsync(userName);
-```
-
-**IAMWrapper.cs**
-
-```csharp
-public async Task<AccessKey> CreateAccessKeyAsync(string userName)
-{
-   var response = await _IAMService.CreateAccessKeyAsync(new CreateAccessKeyRequest
-   {
-       UserName = userName,
-   });
-
-   return response.AccessKey;
-}
-```
-
 c) **Creates a role and policy** that grant s3:ListAllMyBuckets permission
-
-**Program.cs**
-
-```csharp
-
-```
-
-**IAMWrapper.cs**
-
-```csharp
-
-```
-
 
 d) Grants the **user** permission to **assume the role**
 
@@ -950,11 +895,70 @@ It simulates a scenario where an **IAM user is created** and gradually **granted
 
 The goal is to demonstrate IAM basics, including:
 
-a) **Creating a user** with no permissions.
+a) **Creates a user** with no permissions
 
-b) **Creating a role and a policy** to allow S3 access.
+**Program.cs**
 
-c) **Assuming the role** using STS (Security Token Service).
+```csharp
+var user = await iamWrapper.CreateUserAsync(userName);
+```
+
+**IAMWrapper.cs**
+
+```csharp
+public async Task<User> CreateUserAsync(string userName)
+{
+    var response = await _IAMService.CreateUserAsync(new CreateUserRequest { UserName = userName });
+    return response.User;
+}
+```
+
+**IAMWrapper.cs**
+
+```csharp
+
+```
+
+b) **Create an Access Key** for the new user
+
+**Program.cs**
+
+```csharp
+var accessKey = await iamWrapper.CreateAccessKeyAsync(userName);
+```
+
+**IAMWrapper.cs**
+
+```csharp
+public async Task<AccessKey> CreateAccessKeyAsync(string userName)
+{
+   var response = await _IAMService.CreateAccessKeyAsync(new CreateAccessKeyRequest
+   {
+       UserName = userName,
+   });
+
+   return response.AccessKey;
+}
+```
+
+c) **Creates a role and policy** that grant s3:ListAllMyBuckets permission
+
+**Program.cs**
+
+```csharp
+
+```
+
+**IAMWrapper.cs**
+
+```csharp
+
+```
+
+d) Grants the **user** permission to **assume the role**
+
+
+
 
 d) **Using temporary credentials** to access S3.
 
