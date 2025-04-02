@@ -1263,7 +1263,10 @@ We confirm in AWS Console the new IAM Policy was attached to the Role
 
 ![image](https://github.com/user-attachments/assets/271901c5-82b4-4c10-8938-69e02244f9d3)
 
-### 10.6. 
+### 10.6. We list buckets in the S3
+
+![image](https://github.com/user-attachments/assets/53e7bc2f-d12d-4421-9052-c4db7b339bf1)
+
 
 
 
