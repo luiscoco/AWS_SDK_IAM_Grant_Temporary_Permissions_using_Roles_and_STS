@@ -1239,10 +1239,13 @@ We also confirm in AWS Console for the new user the access key was created
 
 ![image](https://github.com/user-attachments/assets/0fffc728-e9e2-4b4a-b6fb-aae0795feca4)
 
-
 ### 10.3. We create a new IAM Role
 
+![image](https://github.com/user-attachments/assets/abb7f84d-2206-431f-98cd-a72d47b1f448)
 
+We confirme the new role was created in AWS Console
+
+![image](https://github.com/user-attachments/assets/3bd5b325-eda2-4881-8a51-4f88bdcfdade)
 
 ### 10.4. We create a new IAM Policy
 
