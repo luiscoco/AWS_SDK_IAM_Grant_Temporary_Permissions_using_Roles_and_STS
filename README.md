@@ -30,6 +30,9 @@ We login in **AWS Console** and create a **AWS Access Key ID** and **AWS Secret 
 
 ![image](https://github.com/user-attachments/assets/42130ad9-952d-4364-81fa-0e2c77128939)
 
+![image](https://github.com/user-attachments/assets/0ffbdde6-add7-4a65-affb-015e6d7688a2)
+
+![image](https://github.com/user-attachments/assets/a58bb7b4-2bc0-479a-a4c8-bf1d0d40800e)
 
 We execute the following command to configure AWS CLI
 
