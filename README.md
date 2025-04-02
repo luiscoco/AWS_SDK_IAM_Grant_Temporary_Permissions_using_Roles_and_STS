@@ -44,13 +44,21 @@ We input the **AWS Access Key ID** and **AWS Secret Access Key** already generat
 
 ## 2. Create a C# Console application with .NET 10 and Visual Studio v17.4 Community Edition
 
+We run Visual Studio 2022 v17.4 and we create a new project
+
 ![image](https://github.com/user-attachments/assets/326e2552-1024-4304-a181-2daf58882f1a)
 
+We select the C# Console project template
 
+![image](https://github.com/user-attachments/assets/da2fbbe0-cc58-4c95-8493-b97411d80bb9)
 
+We input the project name and location
 
+![image](https://github.com/user-attachments/assets/5a6ccd47-ae19-483c-a6d8-25ffd4de9868)
 
+We select the project .NET 10 framework and we finally create the new solution
 
+![image](https://github.com/user-attachments/assets/c601d7dd-f318-439c-b987-af33f72bbfdc)
 
 ## 3. Add Nuget Packages
 
