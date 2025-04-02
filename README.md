@@ -1249,7 +1249,13 @@ We confirme the new role was created in AWS Console
 
 ### 10.4. We create a new IAM Policy
 
+![image](https://github.com/user-attachments/assets/3a7bcae4-2962-4141-b29a-16d3b3434b16)
 
+We confirm the new IAM Policy was created in AWS Console
+
+![image](https://github.com/user-attachments/assets/3ed755a5-d89e-4e3f-8bb4-367fbcdadaba)
+
+### 10.5. We Attach the Policy to the Role
 
 
 
