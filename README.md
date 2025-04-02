@@ -987,23 +987,44 @@ string policyDocument = "{" +
 var policy = await iamWrapper.CreatePolicyAsync(s3PolicyName, policyDocument);
 ```
 
+**Attach the policy to the role**
 
-
-
-**IAMWrapper.cs**
+**Program.cs**
 
 ```csharp
-
+await iamWrapper.AttachRolePolicyAsync(policy.Arn, roleName);
 ```
 
 d) Grants the **user** permission to **assume the role**
 
+Use the AWS Security Token Service (AWS **STS**) to have the **user assume the role** we created.
 
+**Program.cs**
 
+```csharp
+var stsClient2 = new AmazonSecurityTokenServiceClient(accessKeyId, secretAccessKey);
 
-d) **Using temporary credentials** to access S3.
+// Wait for the new credentials to become valid.
+uiWrapper.WaitABit(10, "Waiting for the credentials to be valid.");
 
-e) **Cleaning up** the created AWS **resources**.
+var assumedRoleCredentials = await s3Wrapper.AssumeS3RoleAsync("temporary-session", roleArn);
+
+// Try again to list the buckets using the client created with
+// the new user's credentials. This time, it should work.
+var s3Client2 = new AmazonS3Client(assumedRoleCredentials);
+
+s3Wrapper.UpdateClients(s3Client2, stsClient2);
+```
+
+e) **Using temporary credentials** to access S3 and list buckets.
+
+**Program.cs**
+
+```csharp
+buckets = await s3Wrapper.ListMyBucketsAsync();
+```
+
+f) **Cleaning up** the created AWS **resources**.
 
 ```csharp
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
