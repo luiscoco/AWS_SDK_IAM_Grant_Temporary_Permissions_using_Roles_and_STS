@@ -1,6 +1,6 @@
 # Granting Temporary AWS Permissions with IAM Roles and STS
 
-In this hands-on guide, I walk through how to grant temporary permissions in AWS using IAM Roles and Security Token Service (STS)—all implemented in a .NET 10 console application with AWS SDK for .NET version 4.
+In this hands-on guide, I walk through how to grant temporary permissions in AWS using **IAM Roles** and the Security Token Service (**STS**) to assume a role, all implemented in a **.NET 10** console application using **AWS SDK for .NET version 4**.
 
 This example application does the following:
 
@@ -588,6 +588,27 @@ public class IAMWrapper
 
 
 ## 7. Input the S3Wrapper.cs code
+
+The S3Wrapper class provides a simplified way to interact with Amazon S3 and AWS STS (Security Token Service) for common operations, mainly used in IAM (Identity and Access Management) learning or scenario-based testing
+
+This class is likely used in IAM training scenarios, especially to demonstrate how permissions affect access to S3 buckets, and how role-assumption works in practice
+
+**Key Responsibilities**
+a) **Constructor**: Accepts two AWS client objects:
+
+**IAmazonS3**: to perform S3 operations
+
+**IAmazonSecurityTokenService**: to assume IAM roles
+
+b) **AssumeS3RoleAsync()**: Uses AWS STS to assume a specific IAM role, returning temporary credentials
+
+c) **PutBucketAsync()**: Creates a new S3 bucket with the given name
+
+d) **DeleteBucketAsync()**: Deletes an existing S3 bucket
+
+e) **ListMyBucketsAsync()**: Lists all S3 buckets owned by the account (or assumed role). Handles S3-specific exceptions
+
+f) **UpdateClients()**: Allows replacing the internal S3 and STS clients, useful for updating permissions dynamically during a scenario
 
 ```csharp
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
