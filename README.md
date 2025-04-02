@@ -1,5 +1,7 @@
 # AWS SDK for .NET version 4 with .NET 10: Granting Temporary AWS Permissions with IAM Roles and STS
 
+In this hands-on guide, I walk through how to grant temporary permissions in AWS using IAM Roles and Security Token Service (STS)—all implemented in a .NET 10 console application with AWS SDK for .NET version 4.
+
 ## 1. Prerrequisites
 
 ### 1.1. Download and Install .NET 10
