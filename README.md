@@ -18,6 +18,10 @@ f) Creates a new S3 client object with the temporary credentials and lists the b
 
 g) Deletes all the resources
 
+For more detailed information about this post visit the official AWS SDK for .NET website:
+
+https://docs.aws.amazon.com/sdk-for-net/v4/developer-guide/csharp_iam_code_examples.html
+
 ## 1. Prerrequisites
 
 ### 1.1. Download and Install .NET 10
