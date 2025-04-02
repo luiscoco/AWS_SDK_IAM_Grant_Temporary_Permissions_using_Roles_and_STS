@@ -6,17 +6,74 @@ This example application does the following:
 
 a) **Creates a user** with no permissions
 
-b) **Creates a role and policy** that grant s3:ListAllMyBuckets permission
+**Program.cs**
 
-c) Grants the **user** permission to **assume the role**
+```csharp
+var user = await iamWrapper.CreateUserAsync(userName);
+```
 
-d) **Creates an S3 client** object as the user and tries to **list buckets** (this **will FAIL!!!**)
+**IAMWrapper.cs**
 
-e) **Gets temporary credentials** by assuming the role
+```csharp
+public async Task<User> CreateUserAsync(string userName)
+{
+    var response = await _IAMService.CreateUserAsync(new CreateUserRequest { UserName = userName });
+    return response.User;
+}
+```
 
-f) **Creates a new S3** client object **with the temporary credentials** and **lists the buckets** (this **will SUCCEED**)
+**IAMWrapper.cs**
 
-g) **Delete** all the **resources**
+```csharp
+
+```
+
+b) **Create an Access Key** for the new user
+
+**Program.cs**
+
+```csharp
+var accessKey = await iamWrapper.CreateAccessKeyAsync(userName);
+```
+
+**IAMWrapper.cs**
+
+```csharp
+public async Task<AccessKey> CreateAccessKeyAsync(string userName)
+{
+   var response = await _IAMService.CreateAccessKeyAsync(new CreateAccessKeyRequest
+   {
+       UserName = userName,
+   });
+
+   return response.AccessKey;
+}
+```
+
+c) **Creates a role and policy** that grant s3:ListAllMyBuckets permission
+
+**Program.cs**
+
+```csharp
+
+```
+
+**IAMWrapper.cs**
+
+```csharp
+
+```
+
+
+d) Grants the **user** permission to **assume the role**
+
+e) **Creates an S3 client** object as the user and tries to **list buckets** (this **will FAIL!!!**)
+
+f) **Gets temporary credentials** by assuming the role
+
+g) **Creates a new S3** client object **with the temporary credentials** and **lists the buckets** (this **will SUCCEED**)
+
+h) **Delete** all the **resources**
 
 For more detailed information about this post visit the official AWS SDK for .NET website:
 
