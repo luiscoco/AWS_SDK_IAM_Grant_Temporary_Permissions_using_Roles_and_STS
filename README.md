@@ -889,13 +889,9 @@ public class UIWrapper
 
 This code is a C# console application that demonstrates how to use the AWS Identity and Access Management (IAM) and Amazon S3 services programmatically using the AWS SDK for .NET
 
-It simulates a scenario where an **IAM user is created** and gradually **granted permissions using IAM roles and policies**.
+It simulates a scenario where an **IAM user is created** and gradually **granted permissions using IAM roles and policies**
 
-**Purpose**:
-
-The goal is to demonstrate IAM basics, including:
-
-a) **Creates a user** with no permissions
+### 9.1. Creates a User with No Permissions
 
 **Program.cs**
 
@@ -913,7 +909,7 @@ public async Task<User> CreateUserAsync(string userName)
 }
 ```
 
-b) **Create an Access Key** for the new user
+### 9.2. Create an Access Key for the new User
 
 **Program.cs**
 
@@ -935,7 +931,7 @@ public async Task<AccessKey> CreateAccessKeyAsync(string userName)
 }
 ```
 
-c) **Creates a role and policy** that grant s3:ListAllMyBuckets permission
+### 9.3. Creates a Role 
 
 **Define a role** policy document that allows the new user to assume the role.
 
@@ -954,7 +950,7 @@ string assumeRolePolicyDocument = "{" +
 "}";
 ```
 
-**Creating an IAM role** to allow listing the S3 buckets
+### 9.4. Creating an IAM Policy to allow listing the S3 buckets
 
 A role name is not case sensitive and must be unique to the account for which it is created
 
@@ -964,9 +960,7 @@ A role name is not case sensitive and must be unique to the account for which it
 var roleArn = await iamWrapper.CreateRoleAsync(roleName, assumeRolePolicyDocument);
 ```
 
-**Define the policy**. Permissions to list all buckets.
-
-**Program.cs**
+Define the policy, permission to list all buckets
 
 ```csharp
 string policyDocument = "{" +
@@ -979,7 +973,7 @@ string policyDocument = "{" +
 "}";
 ```
 
-**Create the Policy**
+### 9.5. Create the Policy 
 
 **Program.cs**
 
@@ -987,7 +981,7 @@ string policyDocument = "{" +
 var policy = await iamWrapper.CreatePolicyAsync(s3PolicyName, policyDocument);
 ```
 
-**Attach the policy to the role**
+### 9.6. Attach the policy to the role**
 
 **Program.cs**
 
@@ -995,7 +989,7 @@ var policy = await iamWrapper.CreatePolicyAsync(s3PolicyName, policyDocument);
 await iamWrapper.AttachRolePolicyAsync(policy.Arn, roleName);
 ```
 
-d) Grants the **user** permission to **assume the role**
+### 9.7. Grants the User permission to Assume the Role
 
 Use the AWS Security Token Service (AWS **STS**) to have the **user assume the role** we created.
 
@@ -1016,7 +1010,7 @@ var s3Client2 = new AmazonS3Client(assumedRoleCredentials);
 s3Wrapper.UpdateClients(s3Client2, stsClient2);
 ```
 
-e) **Using temporary credentials** to access S3 and list buckets.
+### 9.8. Using temporary credentials to access S3 and list buckets
 
 **Program.cs**
 
@@ -1024,7 +1018,23 @@ e) **Using temporary credentials** to access S3 and list buckets.
 buckets = await s3Wrapper.ListMyBucketsAsync();
 ```
 
-f) **Cleaning up** the created AWS **resources**.
+### 9.9 Cleaning up the created AWS resources
+
+**Program.cs**
+
+```csharp
+await iamWrapper.DetachRolePolicyAsync(policy.Arn, roleName);
+
+await iamWrapper.DeletePolicyAsync(policy.Arn);
+
+await iamWrapper.DeleteRoleAsync(roleName);
+
+await iamWrapper.DeleteAccessKeyAsync(accessKeyId, userName);
+
+await iamWrapper.DeleteUserAsync(userName);
+```
+
+### 9.10 Program.cs (source code) 
 
 ```csharp
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
