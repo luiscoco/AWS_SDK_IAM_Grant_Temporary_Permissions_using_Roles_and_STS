@@ -24,6 +24,13 @@ https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 
 We login in **AWS Console** and create a **AWS Access Key ID** and **AWS Secret Access Key**
 
+![image](https://github.com/user-attachments/assets/5497a327-2edd-4e20-9392-98d7ae40fb0e)
+
+![image](https://github.com/user-attachments/assets/04515e95-d60d-461f-ae45-7d26d517ca3a)
+
+![image](https://github.com/user-attachments/assets/42130ad9-952d-4364-81fa-0e2c77128939)
+
+
 We execute the following command to configure AWS CLI
 
 ```
