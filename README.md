@@ -1,5 +1,14 @@
 # Granting Temporary AWS Permissions with IAM Roles and STS
 
+**IMPORTRANT NOTE**: visit the following sites to get the latest information about AWS SDK for .NET
+
+https://docs.aws.amazon.com/sdk-for-net/v4/developer-guide/csharp_code_examples.html
+
+https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/dotnetv4
+
+https://github.com/aws/aws-sdk-net/
+
+
 In this hands-on guide, I walk through how to grant temporary permissions in AWS using **IAM Roles** and the Security Token Service (**STS**) to assume a role, all implemented in a **.NET 10** console application using **AWS SDK for .NET version 4**.
 
 This example application does the following:
